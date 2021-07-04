@@ -22,13 +22,16 @@ public class CalculadoraClientSocket {
 			oper1 = read.nextDouble();
 			System.out.printf("Informe o segundo valor: \n");
 			oper2 = read.nextDouble();
-			if(oper2 == 0) {
-				System.out.printf("Divisão impossível de ser realizada.\n");
-			}
+			
 			//1-somar 2-subtrair 3-dividir 4-multiplicar
 			System.out.printf("Informe a operação:\n "
 					+ "1 - Soma\n 2 - Subtração\n 3 - Divisão\n 4 - Multiplicação\n");
 			operacao = read.nextInt();
+			//O programa deve solicitar novamente os dados caso do denominador igual a 0 e a operação de divisão escolhida.
+			if(operacao == 3 && oper2 == 0) {
+				System.out.printf("Divisão impossível de ser realizada.\n");
+				continue;
+			}
 			
 	        try {
 	        	//Conexão com o Servidor

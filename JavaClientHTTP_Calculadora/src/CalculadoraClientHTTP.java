@@ -30,7 +30,7 @@ public class CalculadoraClientHTTP {
 			
 			//1-somar 2-subtrair 3-multiplicar 4-dividir
 			System.out.printf("Informe a operação:\n "
-					+ "1 - Soma\n 2 - Subtração\n 3 - Divisão\n 4 - Multiplicação\n");
+					+ "1 - Soma\n 2 - Subtração\n 3 - Multiplicação\n 4 - Divisão\n");
 			operacao = read.nextInt();
 			//O programa deve solicitar novamente os dados caso do denominador igual a 0 e a operação de divisão escolhida.
 			if(operacao == 3 && oper2 == 0) {
@@ -60,8 +60,6 @@ public class CalculadoraClientHTTP {
 		        if (responseCode == HttpsURLConnection.HTTP_OK) {
 
 		            //RECBIMENTO DOS PARAMETROS
-
-
 		            BufferedReader br = new BufferedReader(
 		                    new InputStreamReader(conn.getInputStream(), "utf-8"));
 		            StringBuilder response = new StringBuilder();

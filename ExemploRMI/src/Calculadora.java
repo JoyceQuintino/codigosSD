@@ -11,9 +11,24 @@ public class Calculadora  implements ICalculadora {
 	
 	private static int chamadas = 0;
 
-	public int soma(int a, int b) throws RemoteException {
-		System.out.println("MÃ©todo soma chamado " + chamadas++);
+	public double soma(double a, double b) throws RemoteException {
+		System.out.println("Método soma chamado " + chamadas++);
 		return a + b;
+	}
+	
+	public double subtracao(double a, double b) throws RemoteException {
+		System.out.println("Método subtração chamado " + chamadas++);
+		return a - b;
+	}
+	
+	public double divisao(double a, double b) throws RemoteException {
+		System.out.println("Método divisão chamado " + chamadas++);
+		return a / b;
+	}
+	
+	public double multiplicacao(double a, double b) throws RemoteException {
+		System.out.println("Método multiplicação chamado " + chamadas++);
+		return a * b;
 	}
 
 	public static void main(String[] args) throws AccessException, RemoteException, AlreadyBoundException  {

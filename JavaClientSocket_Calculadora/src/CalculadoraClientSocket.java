@@ -3,15 +3,26 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class CalculadoraClientSocket {
 
 	public static void main(String[] args) {
 		
 		// TODO Auto-generated method stub
-		double oper1=10,oper2=20;
-		int operacao=3; //1-somar 2-subtrair 3-dividir 4-multiplicar
+		Scanner read = new Scanner(System.in);
+		double oper1,oper2;
+		int operacao; 
 		String result="";
+		
+		System.out.printf("Informe o primeiro valor: \n");
+		oper1 = read.nextDouble();
+		System.out.printf("Informe o segundo valor: \n");
+		oper2 = read.nextDouble();
+		//1-somar 2-subtrair 3-dividir 4-multiplicar
+		System.out.printf("Informe a operação:\n "
+				+ "1 - Soma\n 2 - Subtração\n 3 - Divisão\n 4 - Multiplicação\n");
+		operacao = read.nextInt();
 		
         try {
         	//Conexão com o Servidor
@@ -35,7 +46,7 @@ public class CalculadoraClientSocket {
             result=messageFromServer.readLine();
             
             //Exibe os dados
-            System.out.println("resultado="+result);
+            System.out.println("resultado= "+result);
             //Fecha a conexão com o servidor
             clientSocket.close();
 

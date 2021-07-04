@@ -8,22 +8,21 @@ import java.net.Socket;
 
 public class CalculadoraServerSocket {
 
-	
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ServerSocket welcomeSocket;
-		DataOutputStream socketOutput;     	
+		DataOutputStream socketOutput;   	
 	    DataInputStream socketInput;
 	    BufferedReader socketEntrada;
-	    Calculadora calc = new Calculadora();
+	    //Instância da classe Calculadora que possui operações básicas de soma, subtração, divisão e multiplicação.
+	    Calculadora calc = new Calculadora(); 
 		try {
-			welcomeSocket = new ServerSocket(9090);
-		  int i=0; //número de clientes
+		  welcomeSocket = new ServerSocket(9090);
+		  int i = 0; //número de clientes
 	  
 	      System.out.println ("Servidor no ar");
 	      while(true) { 
-	  
+	    	   //connectionSocket 
 	           Socket connectionSocket = welcomeSocket.accept(); 
 	           i++;
 	           System.out.println ("Nova conexão");
@@ -35,7 +34,16 @@ public class CalculadoraServerSocket {
                String oper2=socketEntrada.readLine();
                
                //Chamando a calculadora
-               String result= ""+calc.soma(Double.parseDouble(oper1),Double.parseDouble(oper2));
+               String result = "";
+               if(Integer.parseInt(operacao)==1) {
+               		result= ""+calc.soma(Double.parseDouble(oper1),Double.parseDouble(oper2));
+               }else if(Integer.parseInt(operacao)==2) {
+            	    result= ""+calc.subtracao(Double.parseDouble(oper1),Double.parseDouble(oper2));
+               }else if(Integer.parseInt(operacao)==3) {
+           	    	result= ""+calc.divisao(Double.parseDouble(oper1),Double.parseDouble(oper2));
+               }else if(Integer.parseInt(operacao)==4) {
+          	    	result= ""+calc.multiplicacao(Double.parseDouble(oper1),Double.parseDouble(oper2));
+               }
                
                //Enviando dados para o servidor
                socketOutput= new DataOutputStream(connectionSocket.getOutputStream());     	
@@ -43,7 +51,6 @@ public class CalculadoraServerSocket {
 	           System.out.println (result);	           
 	           socketOutput.flush();
 	           socketOutput.close();
-
 	                    
 	      }
 		} catch (IOException e) {

@@ -21,7 +21,7 @@ public class CalculadoraClientHTTP {
         conn.setConnectTimeout(15000);
         conn.setRequestMethod("POST");
         conn.setDoInput(true);
-        conn.setDoOutput(true) ;
+        conn.setDoOutput(true);
 
         //ENVIO DOS PARAMETROS
         OutputStream os = conn.getOutputStream();

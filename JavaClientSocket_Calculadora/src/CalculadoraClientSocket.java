@@ -4,20 +4,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 import java.util.Scanner;
+import java.math.BigDecimal;
 
 public class CalculadoraClientSocket {
 
 	public static void main(String[] args) {
 		
-		int num=1;
+		Scanner read = new Scanner(System.in);
+		double oper1,oper2;
+		int operacao; 
+		String result="";
+		
+		int num=1; //inicializa com 1 apenas para o laço executar
 		
 		do {
 			// TODO Auto-generated method stub
-			Scanner read = new Scanner(System.in);
-			double oper1,oper2;
-			int operacao; 
-			String result="";
-			
 			System.out.printf("Informe o primeiro valor: \n");
 			oper1 = read.nextDouble();
 			System.out.printf("Informe o segundo valor: \n");
@@ -55,8 +56,13 @@ public class CalculadoraClientSocket {
 	            //Ler uma linha por vez dos dados enviados para o servidor e armazena na variável result.
 	            result=messageFromServer.readLine();
 	            
-	            //Exibe os dados
-	            System.out.println("resultado= "+result);
+	            if(Double.parseDouble(result)%2==0) {
+	            	System.out.println("resultado= "+result);
+	            }else {
+	            	//Exibe os dados
+		            System.out.println("resultado= "+result);
+	            }
+	            
 	            //Fecha a conexão com o servidor
 	            clientSocket.close();
 
@@ -68,7 +74,7 @@ public class CalculadoraClientSocket {
 			if(num==0) {
 				System.out.printf("Fim!\n");
 			}
-		}while(num>0);
+		}while(num==1);
 
 	}
 

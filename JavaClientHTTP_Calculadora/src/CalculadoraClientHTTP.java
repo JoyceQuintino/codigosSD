@@ -29,12 +29,12 @@ public class CalculadoraClientHTTP {
 			oper2 = read.nextDouble();
 			
 			//1-somar 2-subtrair 3-multiplicar 4-dividir
-			System.out.printf("Informe a operação:\n "
-					+ "1 - Soma\n 2 - Subtração\n 3 - Multiplicação\n 4 - Divisão\n");
+			System.out.printf("Informe a operaï¿½ï¿½o:\n "
+					+ "1 - Soma\n 2 - Subtraï¿½ï¿½o\n 3 - Multiplicaï¿½ï¿½o\n 4 - Divisï¿½o\n");
 			operacao = read.nextInt();
-			//O programa deve solicitar novamente os dados caso do denominador igual a 0 e a operação de divisão escolhida.
+			//O programa deve solicitar novamente os dados caso do denominador igual a 0 e a operaï¿½ï¿½o de divisï¿½o escolhida.
 			if(operacao == 3 && oper2 == 0) {
-				System.out.printf("Divisão impossível de ser realizada.\n");
+				System.out.printf("Divisï¿½o impossï¿½vel de ser realizada.\n");
 				continue;
 			}
 		    try {
@@ -81,3 +81,7 @@ public class CalculadoraClientHTTP {
 		}while(num>0);
 	}
 }
+
+
+
+

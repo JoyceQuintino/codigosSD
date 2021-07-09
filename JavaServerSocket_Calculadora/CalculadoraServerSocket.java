@@ -20,7 +20,7 @@ public class CalculadoraServerSocket {
 		  welcomeSocket = new ServerSocket(9090);
 		  int i = 0; //número de clientes
 	  
-	      System.out.println ("Servidor no ar");
+	      System.out.println("Servidor no ar");
 	      while(true) { 
 	    	   //connectionSocket 
 	           Socket connectionSocket = welcomeSocket.accept(); 

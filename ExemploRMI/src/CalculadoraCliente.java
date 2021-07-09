@@ -10,9 +10,9 @@ public class CalculadoraCliente {
 		Registry reg = null;
 		ICalculadora calc;
 		double oper1,oper2;
-		int operacao; 
+		int operacao;
 		
-		int num=1; //inicializa com apenas para o laço executar
+		int num=1; //inicializa com 1 apenas para o laço executar
 		
 		do {
 			//Solicita os dados ao usuário a partir do teclado
